@@ -3,7 +3,7 @@ package packr_test
 import (
 	"testing"
 
-	"github.com/gobuffalo/packr/v2/_fixtures/import_pkg"
+	"github.com/arconomy/packr/_fixtures/import_pkg"
 	"github.com/stretchr/testify/require"
 )
 

@@ -6,14 +6,14 @@ import (
 	"os"
 	"strings"
 
-	"github.com/gobuffalo/packr/v2/jam/store"
+	"github.com/arconomy/packr/jam/store"
 )
 
 //YesToAll will be used by the command to skip the questions
 var YesToAll bool
 
 var replace = map[string]string{
-	"github.com/gobuffalo/packr": "github.com/gobuffalo/packr/v2",
+	"github.com/gobuffalo/packr": "github.com/arconomy/packr",
 }
 
 var ic = ImportConverter{

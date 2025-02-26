@@ -1,7 +1,7 @@
 package store
 
 import (
-	"github.com/gobuffalo/packr/v2/jam/parser"
+	"github.com/arconomy/packr/jam/parser"
 )
 
 type Store interface {

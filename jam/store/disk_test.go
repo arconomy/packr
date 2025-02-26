@@ -9,8 +9,8 @@ package store
 // 	"github.com/gobuffalo/envy"
 // 	"github.com/gobuffalo/genny/gentest"
 // 	"github.com/gobuffalo/gogen/gomods"
-// 	"github.com/gobuffalo/packr/v2"
-// 	"github.com/gobuffalo/packr/v2/jam/parser"
+// 	"github.com/arconomy/packr"
+// 	"github.com/arconomy/packr/jam/parser"
 // 	"github.com/markbates/oncer"
 // 	"github.com/stretchr/testify/require"
 // )
@@ -44,7 +44,7 @@ package store
 //
 // 		f := res.Files[0]
 // 		r.Equal("a-packr.go", filepath.Base(f.Name()))
-// 		r.Contains(f.String(), `import _ "github.com/gobuffalo/packr/v2/jam/packrd"`)
+// 		r.Contains(f.String(), `import _ "github.com/arconomy/packr/jam/packrd"`)
 // 		return nil
 // 	})
 // }
@@ -78,7 +78,7 @@ package store
 //
 // 	f := res.Files[0]
 // 	r.Equal("a-packr.go", filepath.Base(f.Name()))
-// 	r.Contains(f.String(), `import _ "github.com/gobuffalo/packr/v2/jam/packrd"`)
+// 	r.Contains(f.String(), `import _ "github.com/arconomy/packr/jam/packrd"`)
 // }
 //
 // func Test_Disk_FileNames(t *testing.T) {

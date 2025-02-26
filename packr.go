@@ -3,34 +3,35 @@ package packr
 import (
 	"fmt"
 
-	"github.com/gobuffalo/packr/v2/file/resolver"
-	"github.com/gobuffalo/packr/v2/jam/parser"
-	"github.com/gobuffalo/packr/v2/plog"
+	"github.com/arconomy/packr/file/resolver"
+	"github.com/arconomy/packr/jam/parser"
+	"github.com/arconomy/packr/plog"
 	"github.com/markbates/safe"
 )
 
 var boxes = &boxMap{}
 
-var _ = safe.Run(func() {
+var _ = safe.Run(func() error {
 	p, err := parser.NewFromRoots([]string{}, nil)
 	if err != nil {
 		plog.Logger.Error(err)
-		return
+		return err
 	}
 	boxes, err := p.Run()
 	if err != nil {
 		plog.Logger.Error(err)
-		return
+		return err
 	}
 	for _, box := range boxes {
 		b := construct(box.Name, box.AbsPath)
 		_, err = placeBox(b)
 		if err != nil {
 			plog.Logger.Error(err)
-			return
+			return err
 		}
 	}
 
+	return nil
 })
 
 func findBox(name string) (*Box, error) {

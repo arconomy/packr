@@ -6,7 +6,7 @@ https://blog.gobuffalo.io/introducing-pkger-static-file-embedding-in-go-1ce76dc7
 
 # Packr (v2)
 
-[![GoDoc](https://godoc.org/github.com/gobuffalo/packr/v2?status.svg)](https://godoc.org/github.com/gobuffalo/packr/v2)
+[![GoDoc](https://godoc.org/github.com/arconomy/packr?status.svg)](https://godoc.org/github.com/arconomy/packr)
 [![Actions Status](https://github.com/gobuffalo/packr/workflows/Tests/badge.svg)](https://github.com/gobuffalo/packr/actions)
 
 Packr is a simple solution for bundling static assets inside of Go binaries. Most importantly it does it in a way that is friendly to developers while they are developing.
@@ -27,13 +27,13 @@ To get an idea of the what and why of Packr, please enjoy this short video: [htt
 ### Go 1.16 and above
 
 ```console
-$ go install github.com/gobuffalo/packr/v2@v2.8.3
+$ go install github.com/arconomy/packr@v2.8.3
 ```
 
 or
 
 ```console
-$ go install github.com/gobuffalo/packr/v2@latest
+$ go install github.com/arconomy/packr@latest
 ```
 
 ### Go 1.15 and below
@@ -47,13 +47,13 @@ $ go get -u github.com/gobuffalo/packr/...
 ### Go 1.16 and above
 
 ```console
-$ go install github.com/gobuffalo/packr/v2/packr2@v2.8.3
+$ go install github.com/arconomy/packr/packr2@v2.8.3
 ```
 
 or
 
 ```console
-$ go install github.com/gobuffalo/packr/v2/packr2@latest
+$ go install github.com/arconomy/packr/packr2@latest
 ```
 
 ### Go 1.15 and below
@@ -125,7 +125,7 @@ package main
 import (
   "fmt"
 
-  "github.com/gobuffalo/packr/v2"
+  "github.com/arconomy/packr"
 )
 
 func main() {
@@ -166,7 +166,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/gobuffalo/packr/v2"
+	"github.com/arconomy/packr"
 )
 
 func main() {
@@ -229,7 +229,7 @@ When I run `packr2` I get errors like:
 expected 'IDENT', found '{'
 ```
 
-A: Packr works by searching your `.go` files for [`github.com/gobuffalo/packr/v2#New`](https://godoc.org/github.com/gobuffalo/packr/v2#New) or [`github.com/gobuffalo/packr/v2#NewBox`](https://godoc.org/github.com/gobuffalo/packr/v2#NewBox) calls. Because those files aren't "proper" Go files, Packr can't parse them to find the box declarations. To fix this you need to tell Packr to ignore those files when searching for boxes. A couple solutions to this problem are:
+A: Packr works by searching your `.go` files for [`github.com/arconomy/packr#New`](https://godoc.org/github.com/arconomy/packr#New) or [`github.com/arconomy/packr#NewBox`](https://godoc.org/github.com/arconomy/packr#NewBox) calls. Because those files aren't "proper" Go files, Packr can't parse them to find the box declarations. To fix this you need to tell Packr to ignore those files when searching for boxes. A couple solutions to this problem are:
 
 * Name the files something else. The `.tmpl` extension is the idiomatic way of naming these types of files.
 * Rename the folder containing these files to start with an `_`, for example `_templates`. Packr, like Go, will ignore folders starting with the `_` character when searching for boxes.
@@ -238,7 +238,7 @@ A: Packr works by searching your `.go` files for [`github.com/gobuffalo/packr/v2
 
 Q: I need to set the path of a box using a variable, but `packr.New("foo", myVar)` doesn't work correctly.
 
-A: Packr attempts to "automagically" set it's resolution directory when using [`github.com/gobuffalo/packr/v2#New`](https://godoc.org/github.com/gobuffalo/packr/v2#New), however, for dynamic paths you need to set it manually:
+A: Packr attempts to "automagically" set it's resolution directory when using [`github.com/arconomy/packr#New`](https://godoc.org/github.com/arconomy/packr#New), however, for dynamic paths you need to set it manually:
 
 ```go
 box := packr.New("foo", "|")
@@ -249,7 +249,7 @@ box.ResolutionDir = myVar
 
 Q: I want to write code that using the Packr tools, but doesn't actually pack the files into my binary. How can I do that?
 
-A: Using [`github.com/gobuffalo/packr/v2#Folder`](https://godoc.org/github.com/gobuffalo/packr/v2#Folder) gives you back a `*packr.Box` that can be used as normal, but is excluded by the Packr tool when compiling.
+A: Using [`github.com/arconomy/packr#Folder`](https://godoc.org/github.com/arconomy/packr#Folder) gives you back a `*packr.Box` that can be used as normal, but is excluded by the Packr tool when compiling.
 
 ### Packr Finds No Boxes
 
@@ -260,7 +260,7 @@ DEBU[2019-03-18T18:48:52+01:00] *parser.Parser#NewFromRoots found prospects=0
 DEBU[2019-03-18T18:48:52+01:00] found 0 boxes
 ```
 
-A: Packr works by parsing `.go` files to find [`github.com/gobuffalo/packr/v2#Box`](https://godoc.org/github.com/gobuffalo/packr/v2#Box) and [`github.com/gobuffalo/packr/v2#NewBox`](https://godoc.org/github.com/gobuffalo/packr/v2#NewBox) declarations. If there aren't any `.go` in the folder that `packr2` is run in it can not find those declarations. To fix this problem run the `packr2` command in the directory containing your `.go` files.
+A: Packr works by parsing `.go` files to find [`github.com/arconomy/packr#Box`](https://godoc.org/github.com/arconomy/packr#Box) and [`github.com/arconomy/packr#NewBox`](https://godoc.org/github.com/arconomy/packr#NewBox) declarations. If there aren't any `.go` in the folder that `packr2` is run in it can not find those declarations. To fix this problem run the `packr2` command in the directory containing your `.go` files.
 
 ### Box Interfaces
 

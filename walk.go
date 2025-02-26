@@ -5,9 +5,9 @@ import (
 	"strings"
 
 	"github.com/gobuffalo/packd"
-	"github.com/gobuffalo/packr/v2/file"
-	"github.com/gobuffalo/packr/v2/file/resolver"
-	"github.com/gobuffalo/packr/v2/plog"
+	"github.com/arconomy/packr/file"
+	"github.com/arconomy/packr/file/resolver"
+	"github.com/arconomy/packr/plog"
 )
 
 // WalkFunc is used to walk a box

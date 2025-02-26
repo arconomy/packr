@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 
 	"github.com/gobuffalo/logger"
-	"github.com/gobuffalo/packr/v2/jam"
-	"github.com/gobuffalo/packr/v2/plog"
+	"github.com/arconomy/packr/jam"
+	"github.com/arconomy/packr/plog"
 	"github.com/spf13/cobra"
 )
 

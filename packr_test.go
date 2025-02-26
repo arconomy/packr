@@ -1,6 +1,6 @@
 package packr
 
-import "github.com/gobuffalo/packr/v2/file"
+import "github.com/arconomy/packr/file"
 
 func qfile(name string, body string) File {
 	f, err := file.NewFile(name, []byte(body))

@@ -3,7 +3,7 @@ package fix
 import (
 	"fmt"
 
-	packr "github.com/gobuffalo/packr/v2"
+	packr "github.com/arconomy/packr"
 )
 
 // Check interface for runnable checker functions

@@ -1,6 +1,6 @@
 package q
 
-import "github.com/gobuffalo/packr/v2"
+import "github.com/arconomy/packr"
 
 func init() {
 	packr.New("bob", "dylan")

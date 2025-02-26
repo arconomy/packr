@@ -3,7 +3,7 @@ package store
 import (
 	"fmt"
 
-	"github.com/gobuffalo/packr/v2/jam/parser"
+	"github.com/arconomy/packr/jam/parser"
 )
 
 var _ Store = &FnStore{}

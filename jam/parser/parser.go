@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/gobuffalo/packr/v2/plog"
+	"github.com/arconomy/packr/plog"
 )
 
 // Parser to find boxes

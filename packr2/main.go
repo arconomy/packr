@@ -1,6 +1,6 @@
 package main
 
-import "github.com/gobuffalo/packr/v2/packr2/cmd"
+import "github.com/arconomy/packr/packr2/cmd"
 
 func main() {
 	cmd.Execute()

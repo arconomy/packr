@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/gobuffalo/packr/v2/jam"
+	"github.com/arconomy/packr/jam"
 	"github.com/spf13/cobra"
 )
 

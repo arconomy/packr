@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/gobuffalo/packr/v2/plog"
+	"github.com/arconomy/packr/plog"
 	"github.com/karrick/godirwalk"
 )
 

@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	packr "github.com/gobuffalo/packr/v2"
+	packr "github.com/arconomy/packr"
 	"github.com/spf13/cobra"
 )
 

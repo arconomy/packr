@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/gobuffalo/packr/v2/plog"
+	"github.com/arconomy/packr/plog"
 )
 
 func goCmd(name string, args ...string) error {

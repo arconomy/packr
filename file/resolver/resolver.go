@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/gobuffalo/packr/v2/file"
+	"github.com/arconomy/packr/file"
 )
 
 type Resolver interface {
